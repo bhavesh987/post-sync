@@ -21,6 +21,7 @@ class PostSync {
 		require_once POST_SYNC_PATH . 'admin/class-ps-admin.php';
 		require_once POST_SYNC_PATH . 'includes/class-ps-sync-host.php';
 		require_once POST_SYNC_PATH . 'includes/class-ps-sync-target.php';
+		require_once POST_SYNC_PATH . 'includes/class-ps-translator.php';
 	}
 
 	private function define_admin_hooks() {

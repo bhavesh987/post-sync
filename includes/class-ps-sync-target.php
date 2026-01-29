@@ -154,7 +154,8 @@ class PostSync_Target {
 	// Stub for translation process - actual logic in next step
 	public function process_translation_job( $post_id ) {
 		// Will call Translator class
-		do_action( 'ps_run_translation', $post_id ); 
+		$translator = new PostSync_Translator();
+		$translator->translate_post( $post_id );
 	}
 
 }
