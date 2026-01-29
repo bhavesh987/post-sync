@@ -6,7 +6,7 @@ class PostSync_Logger {
 		global $wpdb;
 		$table_name = $wpdb->prefix . 'ps_logs';
 
-		$wpdb->insert(
+		$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 			$table_name,
 			array(
 				'site_role' => $site_role,

@@ -11,7 +11,7 @@ class PostSync_Admin {
 	}
 
 	public function set_locale() {
-		load_plugin_textdomain(
+		load_plugin_textdomain( // phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
 			'post-sync',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'

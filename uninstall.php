@@ -14,8 +14,9 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 global $wpdb;
 
 // Drop Logs Table
-$table_name = $wpdb->prefix . 'ps_logs';
-$wpdb->query( "DROP TABLE IF EXISTS $table_name" );
+$post_sync_logs_table = $wpdb->prefix . 'ps_logs';
+// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
+$wpdb->query( 'DROP TABLE IF EXISTS ' . $post_sync_logs_table );
 
 // Delete Options
 delete_option( 'ps_mode' );
