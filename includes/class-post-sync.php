@@ -16,7 +16,8 @@ class PostSync {
 	}
 
 	private function load_dependencies() {
-		// Dependencies will be loaded here in future steps.
+		require_once POST_SYNC_PATH . 'includes/class-ps-logger.php';
+		require_once POST_SYNC_PATH . 'includes/class-ps-auth.php';
 	}
 
 	private function define_admin_hooks() {
