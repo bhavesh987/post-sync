@@ -19,6 +19,7 @@ class PostSync {
 		require_once POST_SYNC_PATH . 'includes/class-ps-logger.php';
 		require_once POST_SYNC_PATH . 'includes/class-ps-auth.php';
 		require_once POST_SYNC_PATH . 'admin/class-ps-admin.php';
+		require_once POST_SYNC_PATH . 'includes/class-ps-sync-host.php';
 	}
 
 	private function define_admin_hooks() {
@@ -29,7 +30,12 @@ class PostSync {
 	}
 
 	private function define_public_hooks() {
-		// Public hooks will be defined here
+		$role = get_option( 'ps_mode' ); 
+		
+		if ( $role === 'host' ) {
+			$sync_host = new PostSync_Host();
+			add_action( 'save_post', array( $sync_host, 'handle_post_save' ), 10, 3 );
+		}
 	}
 
 	public function run() {
