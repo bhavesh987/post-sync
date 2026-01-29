@@ -5,8 +5,14 @@
  */
 class PostSync_Deactivator {
 
+	/**
+	 * Deactivation logic.
+	 *
+	 * @since    1.0.0
+	 */
 	public static function deactivate() {
-		// Deactivation logic will be added here
+		// Typically we don't drop tables on deactivation to preserve data.
+		// If strict cleanup was requested, we would drop it here.
 	}
 
 }
