@@ -1,8 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class PostSync {
 
-	protected $loader;
 	protected $plugin_name;
 	protected $version;
 
@@ -26,6 +28,7 @@ class PostSync {
 
 	private function define_admin_hooks() {
 		$plugin_admin = new PostSync_Admin( $this->plugin_name, $this->version );
+		add_action( 'plugins_loaded', array( $plugin_admin, 'set_locale' ) );
 		add_action( 'admin_menu', array( $plugin_admin, 'add_plugin_admin_menu' ) );
 		add_action( 'admin_init', array( $plugin_admin, 'register_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( $plugin_admin, 'enqueue_scripts' ) );
@@ -45,9 +48,4 @@ class PostSync {
 			add_action( 'ps_process_translation', array($sync_target, 'process_translation_job'), 10, 1 );
 		}
 	}
-
-	public function run() {
-		// Hooks are added in constructor
-	}
-
 }

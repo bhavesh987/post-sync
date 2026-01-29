@@ -33,7 +33,7 @@ class PostSync_Host {
 			'categories'=> $cat_names,
 			'tags'      => $tag_names,
 			'featured_image' => $featured_image_url,
-			'host_domain' => parse_url( get_site_url(), PHP_URL_HOST ),
+			'host_domain' => wp_parse_url( get_site_url(), PHP_URL_HOST ),
 		);
 		$body = json_encode( $payload );
 
@@ -69,7 +69,7 @@ class PostSync_Host {
 			),
 			'timeout'     => 15,
 			'blocking'    => true, 
-			'sslverify'   => apply_filters( 'ps_ssl_verify', true ), // Allow overriding for local dev
+			'sslverify'   => apply_filters( 'post_sync_ssl_verify', true ), // Allow overriding for local dev
 		);
 
 		$start_time = microtime( true );
@@ -91,7 +91,7 @@ class PostSync_Host {
 			} elseif ( $json_msg && isset( $json_msg['code'] ) ) {
 				$msg = $json_msg['code'] . ': ' . ( isset($json_msg['message']) ? $json_msg['message'] : '' );
 			} else {
-				$msg = substr( strip_tags( $msg ), 0, 200 ); // fallback truncate
+				$msg = substr( wp_strip_all_tags( $msg ), 0, 200 ); // fallback truncate
 			}
 
 			PostSync_Logger::log( 'host', 'sync_push', $post_id, $target['url'], $status, "HTTP $code: $msg", $duration );

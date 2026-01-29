@@ -119,12 +119,12 @@ class PostSync_Target {
 
 		// Handle Featured Image
 		if ( ! empty( $params['featured_image'] ) ) {
-			$this->sideload_image( $post_id, $params['featured_image'] );
+			$image_url = esc_url_raw( $params['featured_image'] );
+			$this->sideload_image( $post_id, $image_url );
 		}
 
 		PostSync_Logger::log( 'target', 'receive_post', $post_id, $host_domain, 'success', "Post $action successful" );
 
-		// Trigger Translation (to be added in next step)
 		if ( get_option( 'ps_target_chatgpt_key' ) ) {
 			// Schedule single event to run immediately (async)
 			wp_schedule_single_event( time(), 'ps_process_translation', array( $post_id ) );
@@ -151,7 +151,6 @@ class PostSync_Target {
 		}
 	}
 	
-	// Stub for translation process - actual logic in next step
 	public function process_translation_job( $post_id ) {
 		// Will call Translator class
 		$translator = new PostSync_Translator();

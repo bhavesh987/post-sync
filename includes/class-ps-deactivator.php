@@ -11,8 +11,8 @@ class PostSync_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-		// Typically we don't drop tables on deactivation to preserve data.
-		// If strict cleanup was requested, we would drop it here.
+		// Flush rewrite rules to ensure that the site environment is clean.
+		flush_rewrite_rules();
 	}
 
 }

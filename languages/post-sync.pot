@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Post Sync 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/post-sync\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-29T16:38:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: post-sync\n"
+
+#. Plugin Name of the plugin
+msgid "Post Sync + On site Translation"
+msgstr ""
+
+#. Description of the plugin
+msgid "Syncs posts from a Host site to one or more Target sites using REST APIs with key-based auth. Translation happens on the Target."
+msgstr ""
+
+#. Author of the plugin
+msgid "Your Name"
+msgstr ""
+
+#: admin/class-ps-admin.php:12
+#: admin/class-ps-admin.php:87
+msgid "Post Sync Settings"
+msgstr ""
+
+#: admin/class-ps-admin.php:13
+msgid "Post Sync"
+msgstr ""
+
+#: admin/class-ps-admin.php:97
+msgid "Mode"
+msgstr ""
+
+#: admin/class-ps-admin.php:99
+msgid "Host"
+msgstr ""
+
+#: admin/class-ps-admin.php:101
+msgid "Target"
+msgstr ""
+
+#: admin/class-ps-admin.php:108
+msgid "Host Configuration"
+msgstr ""
+
+#: admin/class-ps-admin.php:109
+msgid "Configure the target sites to push content to."
+msgstr ""
+
+#: admin/class-ps-admin.php:114
+msgid "Target URL"
+msgstr ""
+
+#: admin/class-ps-admin.php:115
+msgid "Key (Copy to Target)"
+msgstr ""
+
+#: admin/class-ps-admin.php:116
+msgid "Action"
+msgstr ""
+
+#: admin/class-ps-admin.php:128
+#: admin/class-ps-admin.php:67
+msgid "Remove"
+msgstr ""
+
+#: admin/class-ps-admin.php:136
+msgid "Add New Target"
+msgstr ""
+
+#: admin/class-ps-admin.php:143
+msgid "Target Configuration"
+msgstr ""
+
+#: admin/class-ps-admin.php:146
+msgid "Connection Key"
+msgstr ""
+
+#: admin/class-ps-admin.php:149
+msgid "Paste the key generated on the Host site."
+msgstr ""
+
+#: admin/class-ps-admin.php:154
+msgid "Translation Language"
+msgstr ""
+
+#: admin/class-ps-admin.php:157
+msgid "French"
+msgstr ""
+
+#: admin/class-ps-admin.php:158
+msgid "Spanish"
+msgstr ""
+
+#: admin/class-ps-admin.php:159
+msgid "Hindi"
+msgstr ""
+
+#: admin/class-ps-admin.php:164
+msgid "ChatGPT API Key"
+msgstr ""
+
+#: admin/class-ps-admin.php:66
+msgid "Save to generate key"
+msgstr ""
+
+#: includes/class-post-sync.php:24
+msgid "Post Sync Logs"
+msgstr ""
+
+#: includes/class-post-sync.php:25
+msgid "Post Sync Log"
+msgstr ""
